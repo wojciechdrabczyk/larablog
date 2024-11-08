@@ -20,10 +20,19 @@ interface Props {
 
 
 const Posts: React.FC<Props> = ({posts}) => {
-    console.log(posts);
+    console.log("Posts array:", posts);
     return (
         <div>
-            Testing
+            <ul>
+                {posts.map(post =>
+                    <div key={post.id}>
+                        <a href={`/posts/${post.id}`}>{post.title}</a>
+                        <span className={"text-sm text-gray-600"}>
+                                {formatDistanceToNow(new Date(post.createdAt))} ago by {post.user.username}
+                        </span>
+                    </div>
+                    )}
+            </ul>
         </div>
     )
 }
