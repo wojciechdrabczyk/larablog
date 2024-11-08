@@ -1,8 +1,8 @@
 import {Head, Link} from "@inertiajs/react";
-import Posts from "@/Pages/Posts";
+import Index from "@/Pages/Posts";
 import posts from "@/Pages/Posts";
 
-export default function Welcome({auth}: any) {
+export default function Welcome({auth,posts}: any) {
     return (
         <>
             <Head title={"Welcome"}></Head>
@@ -32,7 +32,7 @@ export default function Welcome({auth}: any) {
                     </>
                 )}
             </nav>
-            <Posts posts={posts} />
+            <Index posts={posts} />
         </>
     )
 }

@@ -10,7 +10,7 @@ interface Post {
     id: number;
     url: string;
     title: string;
-    createdAt: Date;
+    created_at: Date;
     user: User;
 }
 
@@ -19,8 +19,8 @@ interface Props {
 }
 
 
-const Posts: React.FC<Props> = ({posts}) => {
-    console.log("Posts array:", posts);
+const Index: React.FC<Props> = ({posts}) => {
+    console.log("Index array:", posts);
     return (
         <div>
             <ul>
@@ -28,7 +28,7 @@ const Posts: React.FC<Props> = ({posts}) => {
                     <div key={post.id}>
                         <a href={`/posts/${post.id}`}>{post.title}</a>
                         <span className={"text-sm text-gray-600"}>
-                                {formatDistanceToNow(new Date(post.createdAt))} ago by {post.user.username}
+                                {formatDistanceToNow(new Date(post.created_at))} ago by {post.user.username}
                         </span>
                     </div>
                     )}
@@ -36,4 +36,4 @@ const Posts: React.FC<Props> = ({posts}) => {
         </div>
     )
 }
-export default Posts;
+export default Index;
